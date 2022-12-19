@@ -5,5 +5,6 @@
 
 <h7 class="card-title fw-bold"> {{ $lokasi }}</h7>
 <p class="card-text text-secondary">Berjarak {{ $jarak }} <br> {{ $tanggal }} </p>
-<a class="card-text fw-bold">{{ $harga }}</a>
+<a href="/jimbaran" class="card-text fw-bold">{{ $harga }}</a>
+<p>test github</p>
 @endsection
