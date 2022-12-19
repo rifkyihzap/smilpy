@@ -7,4 +7,5 @@
 <p class="card-text text-secondary">Berjarak {{ $jarak }} <br> {{ $tanggal }} </p>
 <a href="/jimbaran" class="card-text fw-bold">{{ $harga }}</a>
 <p>test github terakhir</p>
+<h1>SUDAH TERHUBUNG GITHUB</h1>
 @endsection
