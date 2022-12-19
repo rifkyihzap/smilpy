@@ -1,22 +1,27 @@
-@extends('layout.nav')
+@extends('layout.main')
 
 @section('container')
 <div class="container-fluid">
-    <h3 class="mt-4">Villa Jimbaran</h3>
+    <h3 class="mt-4">{{ $nama }}</h3>
     <div class="row justify-content-between">
         <div class="col-auto me-auto">
-            <a href="#" class="text-decoration-underline"> 2 ulasan </a>·
-            <a href="#" class="text-decoration-underline"> Jimbaran,Indonesia </a>
+            <a href="#" class="text-decoration-underline"> {{ $ulasan }} </a>·
+            <a href="#" class="text-decoration-underline"> {{ $lokasi }} </a>
         </div>
         <div class="col-auto">
-            <a href="#" class="text-decoration-underline me-3"><i class="bi bi-upload me-1"></i> Bagikan </a>
-            <a href="#" class="text-decoration-underline"><i class="bi bi-heart me-1"></i> Simpan</a>
+            <a href="#" class="text-decoration-underline me-3"><i class="bi bi-upload me-1"></i> {{ $bagikan }} </a>
+            <a href="#" class="text-decoration-underline"><i class="bi bi-heart me-1"></i> {{ $simpan }}</a>
         </div>
     </div>
-    <img src="img/aa.jpg" class="rounded mx-auto d-block img-fluid mt-4" style="width: 1300px; height: 450px;" alt="...">
+    <img src="img/{{ $image }}" class="rounded mx-auto d-block img-fluid mt-4" style="width: 1300px; height: 450px;" alt="...">
     <div class="row justify-content-start">
         <div class="col-7">
-            <h3 class="mt-4">Cilffside villa near Pandawa Beach</h3>
+            <h3 class="mt-4">{{ $tempat }}</h3>
+
+
+
+
+            <!-- Belum Dirubah-->
             <p class="text-muted mt-4">10 tamu · 5 kamar tidur · 5 tempat tidur · 5 kamar mandi </p>
             <hr>
             <p>This Elegant Privately owned Villa provides all the comforts of tropical living while preserving a distinctive Balinese charm in an exotic atmosphere with a beautiful birds chirping every morning.

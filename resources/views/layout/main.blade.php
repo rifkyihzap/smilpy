@@ -12,66 +12,18 @@
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
-    <title>Smilpy</title>
+    <title>Smilpy | {{ $title }}</title>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    #overlay {
-        position: fixed;
-        display: none;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 2;
-        cursor: pointer;
-    }
 
-    #text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        font-size: 50px;
-        color: white;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-    }
 </style>
 
 <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-3 mb-5 bg-body rounded">
-            <div class="container-fluid">
+        
+        @include('layout.partials.navbar')
 
-                <a class="navbar-brand fs-4 fw-bold" href="/">
-                    <img src="img/logo.png" alt="" width="30" height="30" class="d-inline-block align-text-top"> Smilpy
-                </a>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active fs-6" aria-current="page" href="/">Menjadi Rekanan Smilpy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active fs-6" href="/"><i class="bi bi-menu-button-wide-fill me-2"></i>Pesanan Saya</a>
-                    </li>
-
-
-                    <li class="nav-item">
-                        <a class="nav-link active fs-6" href="/register"><i class="bi bi-person-circle me-2"></i>Log In</a>
-                    </li>
-
-
-                    <div id="overlay" onclick="off()">
-                        <div id="text">Belum Jadi Tabel Daftar</div>
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-primary" onclick="on()">Daftar</button>
-                    </div>
-                </ul>
-            </div>
-        </nav>
         <h4 class="fw-bold mb-2">Mau ke mana?</h4>
 
         <div class="container-fluid">
