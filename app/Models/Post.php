@@ -7,7 +7,7 @@ class Post
 {
     private static $title_post = [
         [
-            "title" => "home a",
+            "title" => "Abiansemal,Indonesia",
             "lokasi" => "Abiansemal,Indonesia",
             "slug" => "abiansemal-indonesia",
             "jarak" => " 309 Kilometer",
@@ -50,19 +50,13 @@ class Post
 
     public static function all()
     {
-        return self::$title_post;
+        return collect(self::$title_post);
     }
 
     public static function find($slug)
     {
-        $posts = self::$title_post;
-        $post = [];
-        foreach ($posts as $p) {
-            if ($p["slug"] === $slug) {
-                $post = $p;
-            }
-        }
+        $posts = static::all();
 
-        return $post;
+        return $posts->firstWhere('slug', $slug);
     }
 }
