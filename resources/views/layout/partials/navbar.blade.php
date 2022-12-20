@@ -42,7 +42,7 @@
 </style>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-3 mb-5 bg-body rounded">
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-3 mb-3 bg-body rounded">
         <div class="container-fluid">
 
             <a class="navbar-brand fs-4 fw-bold" href="/">
