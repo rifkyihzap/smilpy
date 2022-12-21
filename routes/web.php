@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\SewaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +46,13 @@ Route::get('/login', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('Dashboard.dashboard');
 });
 
-Route::get('/mypost', function () {
-    return view('mypost');
-});
+// Route::get('/mypost', function () {
+//     return view('Dashboard.mypost');
+// });
+
+Route::get('/mypost', [SewaController::class, 'index'])->name('mypost');
+Route::get('/create-mypost', [SewaController::class, 'create'])->name('create-mypost');
+Route::post('/simpan-mypost', [SewaController::class, 'store'])->name('simpan-mypost');
