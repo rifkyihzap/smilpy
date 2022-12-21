@@ -27,7 +27,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Left navbar links -->
     <ul class="navbar-nav col-11">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." aria-describedby="button-addon2">
+<datalist id="datalistOptions">
+  <option value="Tempat">
+  <option value="Foto">
+  <option value="Seattle">
+  <option value="Los Angeles">
+  <option value="Chicago">
+</datalist>
+            {{-- <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2"> --}}
             <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
         </div>
     </ul>
@@ -109,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
         <div class="card card-info card-outline">
             <div class="card-header">
-                <h3>Isi data tempat anda</h3>
+                <h3>Beri tahu kami tentang tempat Anda</h3>
                 </div>
             </div>
 
@@ -117,34 +125,88 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <form action="{{ route('simpan-mypost') }}" method="post">
                     {{ csrf_field() }}
                     <div class="form-group">
+                        <label for=""> Berikan nama pada tempat anda</label>
                         <input type="text" name="judul" id="judul" class="form-control" placeholder="Nama Tempat">
                     </div>
+
                     <div class="form-group">
-                        <input type="text" name="jenistmpt" id="jenistmpt" class="form-control" placeholder="Jenis Tempat">
+                        <label for="floatingSelect">Manakah dari berikut ini yang paling menggambarkan tempat Anda?</label>
+                        <div class="form-floating">
+                            <select class="form-select" name="jenistmpt" id="jenistmpt" aria-label="Floating label select example">
+                            <option selected>Pilih salah satu</option>
+                            <option value="Rumah">Rumah</option>
+                            <option value="Hotel">Hotel</option>
+                            <option value="Apartemen">Apartemen</option>
+                            <option value="Kost">Kost</option>
+                            <option value="Caffe">Cafffe</option>
+                            </select>
+                        </div>
+
+                        {{-- <input type="text" name="jenistmpt" id="jenistmpt" class="form-control" placeholder="Jenis Tempat"> --}}
                     </div>
+                    
                     <div class="form-group">
-                        <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat">
+                        <label for=""> Di mana tempat Anda berada?</label>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item"><input type="text" name="alamat" id="alamat" class="form-control" placeholder="Negara"></li>
+                            <li class="list-group-item"><input type="text" name="alamat" id="alamat" class="form-control" placeholder="Provinsi"></li>
+                            <li class="list-group-item"><input type="text" name="alamat" id="alamat" class="form-control" placeholder="Kota"></li>
+                            <li class="list-group-item"><input type="text" name="alamat" id="alamat" class="form-control" placeholder="Jalan"></li>
+                        </ul>
+                        
+                        {{-- <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat"> --}}
                     </div>
+
                     <div class="form-group">
-                        <input type="text" name="jmlhfasilitas" id="jmlhfasilitas" class="form-control" placeholder="Jumlah Fasilitas">
+                        <label for=""> Bagikan beberapa dasar tentang tempat Anda</label>
+                        <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <input type="text" name="plhnfasilitas" id="plhnfasilitas" class="form-control" placeholder="Kamar, Kamar Mandi, Parkir Area, Dapur, Atau lainnya">
+                            <span class="badge rounded-pill"><input type="number" name="jmlhfasilitas" id="jmlhfasilitas" class="form-control rounded-pill" aria-describedby="basic-addon1" placeholder="Jumlah">
+                            </span>
+                        </li>
+                        </ul>
+                                                
+                        {{-- <input type="text" name="plhnfasilitas" id="plhnfasilitas" class="form-control" placeholder="Fasilitas Umum">
+                        <input type="number" name="jmlhfasilitas" id="jmlhfasilitas" class="form-control" aria-describedby="basic-addon1"> --}}
+                        {{-- <input type="text" name="jmlhfasilitas" id="jmlhfasilitas" class="form-control" placeholder="Jumlah Fasilitas"> --}}
                     </div>
-                    <div class="form-group">
+
+                    {{-- <div class="form-group">
                         <input type="text" name="plhnfasilitas" id="plhnfasilitas" class="form-control" placeholder="Fasilitas Umum">
+                    </div> --}}
+
+                    <div class="form-group">
+                        <label for="">Beri tahu tamu apa yang ditawarkan tempat Anda</label>
+                        <input type="text" name="fasilitaslain" id="fasilitaslain" class="form-control" placeholder="Televisi, AC, Mesin Cuci, Meja, Lemari, Atau lainnya">
+                        {{-- <input type="text" name="fasilitaslain" id="fasilitaslain" class="form-control" placeholder="Fasilitas Lain"> --}}
                     </div>
                     <div class="form-group">
-                        <input type="text" name="fasilitaslain" id="fasilitaslain" class="form-control" placeholder="Fasilitas Lain">
+                        <div class="mb-3">
+                            <label for="formFileMultiple" class="form-label">Tambahkan beberapa foto tempat Anda</label>
+                            <input class="form-control" type="file" name="foto" id="formFileMultiple" multiple>
+                        </div>
+                        {{-- <input type="text" name="foto" id="foto" class="form-control" placeholder="Foto"> --}}
                     </div>
                     <div class="form-group">
-                        <input type="text" name="foto" id="foto" class="form-control" placeholder="Foto">
+                        <label for="">Selanjutnya, mari deskripsikan rumah Anda</label>
+                            <input type="text" name="deskripsi" id="deskripsi" class="form-control" 
+                                placeholder="Dekat dengan minimarket, wisata, ibadah, taman bermain, kampus, atau lainnya">
+                        {{-- <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Deskripsi"> --}}
                     </div>
                     <div class="form-group">
-                        <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Deskripsi">
+                        <label for="formFileMultiple" class="form-label">Buat deskripsi tempat anda</label>
+                        <textarea class="form-control" name="keterangan" id="validationTextarea" placeholder="Deskripsi" required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter a message in the description.
+                        </div>
+                        {{-- <input type="text" name="keterangan" id="keterangan" class="form-control" placeholder="Keterangan"> --}}
                     </div>
-                    <div class="form-group">
-                        <input type="text" name="keterangan" id="keterangan" class="form-control" placeholder="Keterangan">
-                    </div>
-                    <div class="form-group">
+                    <label for="formFileMultiple" class="form-label">Sekarang, tetapkan harga Anda</label>
+                    <div class="form-group input-group col-4">
+                        <span class="input-group-text">Rp.</span>
                         <input type="text" name="harga" id="harga" class="form-control" placeholder="Harga">
+                        <span class="input-group-text" name="harga" id="harga"><small class="text-muted">/ Malam</small></span>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Simpan</button>
