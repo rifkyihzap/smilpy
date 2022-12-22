@@ -127,6 +127,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <th>Deskripsi</th>
                         <th>Keterangan</th>
                         <th>Harga</th>
+                        <th>Aksi</th>
                     </tr>
                     @foreach ($dtsewa as $item)
                     <tr>
@@ -140,6 +141,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>{{ $item->deskripsi }}</td>
                         <td>{{ $item->keterangan }}</td>
                         <td>{{ $item->harga }}</td>
+                        <td>
+                            <a href="{{ url('edit-mypost',$item->id) }}"><i class="bi bi-pencil-square"></i></a> 
+                            <a href="{{ url('delete-mypost',$item->id) }}"><i class="bi bi-trash" style="color: red"></i></a>
+                        </td>
                     </tr>
                     @endforeach
                 </table>

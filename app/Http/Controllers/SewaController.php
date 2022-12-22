@@ -72,7 +72,8 @@ class SewaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sew = sewa::findorfail($id);
+        return view('Dashboard.edit-mypost', compact('sew'));
     }
 
     /**
@@ -84,7 +85,9 @@ class SewaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $sew = sewa::findorfail($id);
+        $sew->update($request->all());
+        return redirect('mypost');
     }
 
     /**
@@ -95,6 +98,8 @@ class SewaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sew = sewa::findorfail($id);
+        $sew->delete();
+        return back();
     }
 }

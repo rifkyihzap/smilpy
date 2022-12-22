@@ -56,3 +56,6 @@ Route::get('/dashboard', function () {
 Route::get('/mypost', [SewaController::class, 'index'])->name('mypost');
 Route::get('/create-mypost', [SewaController::class, 'create'])->name('create-mypost');
 Route::post('/simpan-mypost', [SewaController::class, 'store'])->name('simpan-mypost');
+Route::get('/edit-mypost/{id}', [SewaController::class, 'edit'])->name('edit-mypost');
+Route::post('/update-mypost/{id}', [SewaController::class, 'update'])->name('update-mypost');
+Route::get('/delete-mypost/{id}', [SewaController::class, 'destroy'])->name('delete-mypost');
