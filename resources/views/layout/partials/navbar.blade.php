@@ -45,15 +45,17 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-3 mb-3 bg-body rounded">
         <div class="container-fluid">
 
-            <a class="navbar-brand fs-4 fw-bold" href="/">
-                <img src="img/logo.png" alt="LOGO" width="30" height="30" class="d-inline-block align-text-top"> Smilpy
+            <a class="navbar-brand" href="/">
+                <img src="img/smilpy.png" alt="LOGO" width="140" height="70" class="d-inline-block align-text-top img-fluid">
             </a>
             <ul class="navbar-nav">
+                <span class="border border-3 rounded-pill">
                 <li class="nav-item">
-                    <a class="nav-link active fs-6" aria-current="page" href="/">Menjadi Rekanan Smilpy</a>
+                    <a class="nav-link active fs-6" aria-current="page"  href="/dashboard">Menjadi tuan rumah di Smilpy</a>
                 </li>
+            </span>
                 <li class="nav-item">
-                    <a class="nav-link active fs-6" href="/"><i class="bi bi-menu-button-wide-fill me-2"></i>Pesanan Saya</a>
+                    <a class="nav-link active fs-6" href="/dashboard"><i class="bi bi-menu-button-wide-fill me-2"></i>Pesanan Saya</a>
                 </li>
 
 

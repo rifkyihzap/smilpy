@@ -21,24 +21,26 @@
 
 <body>
     <div class="container-fluid">
-        
         @include('layout.partials.navbar')
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="/dashboard"><button class="btn btn-primary" type="button">Sewakan Tempatmu</button></a>
-        </div>
+        <img src="img/Banner Smilpy.jpg" alt="" class="img-fluid background">
         <h4 class="fw-bold mb-2">Mau ke mana?</h4>
         <div class="container-fluid">
             <div class="row">
                 <div class="input-group">
-
                     <div class="col-4 me-2">
                         <div class="input-group ">
                             <span class="input-group-text" id="basic-addon1"><i class="bi bi-geo-alt-fill"></i></span>
-                            <input type="text" class="form-control" placeholder="Pergi ke" aria-label="Pergi ke" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control" placeholder="Cari berdasarkan tempat, kota, hotel" aria-label="Cari berdasarkan tempat, kota, hotel" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
-                    <div class="col-4 order-1 me-2">
+                    <div class="col-2 order-1 me-">
+                        <div class="input-group ">
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-event"></i></span>
+                            <input type="date" class="form-control" placeholder="Tanggal" aria-label="Tanggal" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="col-2 order-1 me-2">
                         <div class="input-group ">
                             <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-event"></i></span>
                             <input type="date" class="form-control" placeholder="Tanggal" aria-label="Tanggal" aria-describedby="basic-addon1">
@@ -48,7 +50,7 @@
                     <div class="col-3 order-2 me-2">
                         <div class="input-group ">
                             <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
-                            <input type="number" id="number" class="form-control" aria-describedby="basic-addon1">
+                            <input type="number" id="number" class="form-control" aria-describedby="basic-addon1" placeholder="Jumlah tamu">
                         </div>
                     </div>
 

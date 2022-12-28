@@ -41,8 +41,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-    <img src="img/logo.png" alt="Smilpy Logo" class="brand-image" style="opacity: .8">
-    <span class="brand-text font-weight-light">Smilpy</span>
+    <img src="img/smilpy.png" alt="Smilpy Logo" width="180" height="70" style="opacity: .8">
+    <span class="brand-text font-weight-light"></span>
     </a>
 
     <!-- Sidebar -->

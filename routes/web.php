@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SewaController;
 
+use App\Models\Category;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +19,15 @@ use App\Http\Controllers\SewaController;
 */
 
 Route::get('/', [PostController::class, 'index']);
+Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
-//single post//
-Route::get('posts/{slug}', [PostController::class, 'show']);
+Route::get('categories/{category:slug}', function (Category $category) {
+    return view('category', [
+        'title' => $category->name,
+        'posts' => $category->posts,
+        'category' => $category->name
+    ]);
+});
 
 
 
