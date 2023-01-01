@@ -11,7 +11,8 @@ class PostController extends Controller
         return view('home', [
             "title" => "Home",
 
-            "posts" => \App\Models\Post::all()
+            "posts" => \App\Models\Post::all(),
+            "categories" => \App\Models\Category::all()
 
         ]);
     }

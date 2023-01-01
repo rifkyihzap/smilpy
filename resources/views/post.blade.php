@@ -8,7 +8,7 @@
     <div class="row justify-content-between">
         <div class="col-auto me-auto">
             <a href="#" class="text-decoration-underline"> ulasan </a>·
-            <a href="#" class="text-decoration-underline"> {{ $post->alamat }} </a>
+            <a href="#" class="text-decoration-underline"> {{ $post->alamat }}</a>
         </div>
         <div class="col-auto">
             <a href="#" class="text-decoration-underline me-3"><i class="bi bi-upload me-1"></i> bagikan </a>
@@ -19,17 +19,24 @@
     <div class="row justify-content-start">
         <div class="col-7">
             <h3 class="mt-4">{{ $post->title }}</h3>
-
-
-
-
-            <!-- Belum Dirubah-->
-            <p class="text-muted mt-4">{{ $post->jmlhfasilitas }} {{ $post->plhnfasilitas }} </p>
+            <div class="row justify-content-between">
+                <div class="col-auto me-auto">
+                    <p class="text-muted mt-4">{{ $post->jmlhfasilitas }} {{ $post->plhnfasilitas }} </p>
+                </div>
+                <div class="col-auto">
+                    {{-- <a> <img src="img/{{ $post->category->profil }}" alt="" width="40" height="40" class="rounded-circle"> </a> --}}
+                </div>
+            
             <hr>
             <p>{{ $post->body}}</p>
             <p class="fst-italic">{{ $post->keterangan }}</p>
         </div>
         <div class="col-5">
+
+
+
+
+            <!-- Belum Dirubah-->
             <div class="card shadow p-3 mb-5 mt-4 bg-body rounded">
                 <div class="card-body">
                     <div class="row justify-content-between">

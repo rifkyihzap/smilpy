@@ -3,20 +3,19 @@
 
 @section('container')
 <div class="container">
-    
-        
-    @foreach ($categories as $category)
     <div class="row">
-        <h5 class="fw-bold mt-2">Rekomendasi Tempat</h5>
-        <div class="row">
+    <h5 class="fw-bold mt-2">Rekomendasi Tempat di {{ $category }}</h5>
+    {{-- <div class="row"> --}}
+        
+    {{-- @foreach ($posts as $post)
     <div class="col">
-        <a href="/categories/{{ $category->slug }}" class="text-decoration-none fw-bold text-center" style="color: black">
-        <img src="img/{{ $category->image }}" alt="" width="80" height="80" class="rounded-circle"> <br>
-        {{ $category->lokasi }}</a>
+        <a href="/category/{{ $post->category->slug }}">
+        <img src="img/{{ $post->category->image }}" alt="" width="80" height="80" class="rounded-circle"> <br>
+        {{ $post->category->name }}</a>
     </div>
-    @endforeach
+    @endforeach --}}
 
-</div>
+{{-- </div> --}}
 
 <div class="row row-cols-1 row-cols-md-4 g-2">
 @foreach ($posts as $post)
