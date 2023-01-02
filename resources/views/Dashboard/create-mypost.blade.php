@@ -121,7 +121,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
             </div>
 
-            <div class="card-body">
+            <div class="card-body col-lg-8">
                 <form action="{{ route('simpan-mypost') }}" method="post">
                     {{ csrf_field() }}
                     <div class="form-group">

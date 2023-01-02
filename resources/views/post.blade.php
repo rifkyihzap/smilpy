@@ -24,6 +24,7 @@
                     <p class="text-muted mt-4">{{ $post->jmlhfasilitas }} {{ $post->plhnfasilitas }} </p>
                 </div>
                 <div class="col-auto">
+                    <a href="#">{{ $post->user->name }}</a>
                     {{-- <a> <img src="img/{{ $post->category->profil }}" alt="" width="40" height="40" class="rounded-circle"> </a> --}}
                 </div>
             

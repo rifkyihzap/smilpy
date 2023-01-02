@@ -23,7 +23,7 @@
     <div class="container-fluid">
         @include('layout.partials.navbar')
         <img src="img/Banner Smilpy.jpg" alt="" class="img-fluid background">
-        <h4 class="fw-bold mb-2">Mau ke mana?</h4>
+        <h4 class="fw-bold mb-2" >Mau ke mana?</h4>
         <div class="container-fluid">
             <div class="row">
                 <div class="input-group">
