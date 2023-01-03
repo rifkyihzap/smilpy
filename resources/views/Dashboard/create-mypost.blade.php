@@ -79,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('mypost') }}">
+                <a href="/Dashboard">
                     <i class="bi bi-file-post-fill"></i> 
                     My Posts
                 </a>
@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
 
             <div class="card-body col-lg-8">
-                <form action="{{ route('simpan-mypost') }}" method="post">
+                <form action="/Dashboard" method="post">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for=""> Berikan nama pada tempat anda</label>

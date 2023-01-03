@@ -17,6 +17,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <link rel="stylesheet" href="dist/css/adminlte.min.css">
 <!-- Bootstrap Icon -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 <body class="hold-transition sidebar-mini">
@@ -106,79 +108,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <div class="content">
-        <div class="card card-info card-outline">
-            <div class="card-header">
-                <div class="card-tools">
-                    <a href="/Dashboard/create-mypost" class="btn btn-success">Upload Sekarang <i class="bi bi-plus-square"></i></a>
-                </div>
-            </div>
-
-            <div class="card-body">
-                <table class="table table-boardered">
-                    <tr>
-                        <th>Judul</th>
-                        <th>title</th>
-                        <th>slug</th>
-                        <th>excerpt</th>
-                        <th>body</th>
-                        <th>Jenis Tempat</th>
-                        <th>Alamat</th>
-                        <th>Jumlah Fasilitas Umum</th>
-                        <th>Fasilitas Umum</th>
-                        <th>Fasilitas Lain</th>
-                        <th>Foto</th>
-                        <th>Deskripsi</th>
-                        <th>Keterangan</th>
-                        <th>Harga</th>
-                        <th>Aksi</th>
-                    </tr>
-
-                    @foreach ($posts as $post)
-                        <tr>
-                            <td>{{ $post->judul }}</td>
-                            <td>{{ $post->title }}</td>
-                            <td>{{ $post->slug }}</td>
-                            <td>{{ $post->excerpt }}</td>
-                            <td>{{ $post->body }}</td>
-                            <td>{{ $post->jenistmpt }}</td>
-                            <td>{{ $post->alamat }}</td>
-                            <td>{{ $post->jmlhfasilitas }}</td>
-                            <td>{{ $post->plhnfasilitas }}</td>
-                            <td>{{ $post->fasilitaslain }}</td>
-                            <td>{{ $post->foto }}</td>
-                            <td>{{ $post->deskripsi }}</td>
-                            <td>{{ $post->keterangan }}</td>
-                            <td>{{ $post->harga }}</td>
-                            <td><a href="/Dashboard/show{{ $post->slug }}"><i class="bi bi-eye"></i></a> 
-                                <a href="{{ url('edit-mypost') }}"><i class="bi bi-pencil-square"></i></a> 
-                                <a href="{{ url('delete-mypost') }}"><i class="bi bi-trash" style="color: red"></i></a>
-                            </td>
-                        </tr>
-                    @endforeach
-                    {{-- @foreach ($dtsewa as $item)
-                    <tr>
-                        {{-- <td>{{ $item->judul }}</td>
-                        <td>{{ $item->jenistmpt }}</td>
-                        <td>{{ $item->alamat }}</td>
-                        <td>{{ $item->jmlhfasilitas }}</td>
-                        <td>{{ $item->plhnfasilitas }}</td>
-                        <td>{{ $item->fasilitaslain }}</td>
-                        <td>{{ $item->foto }}</td>
-                        <td>{{ $item->deskripsi }}</td>
-                        <td>{{ $item->keterangan }}</td>
-                        <td>{{ $item->harga }}</td> --}}
-                        {{-- <td>
-                            <a href="{{ url('edit-mypost',$item->id) }}"><i class="bi bi-pencil-square"></i></a> 
-                            <a href="{{ url('delete-mypost',$item->id) }}"><i class="bi bi-trash" style="color: red"></i></a>
-                        </td>
-                    </tr>
-                    @endforeach --}}
-                </table>
-            </div>
-        </div>
-
-    </div>
+    
+    
         </div>
         <!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -217,5 +148,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('AdminLTE/dist/js/adminlte.min.js')}}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script>
 </body>
 </html>

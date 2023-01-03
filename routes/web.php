@@ -4,6 +4,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SewaController;
+use App\Http\Controllers\DashboardPostController;
 
 use App\Models\Category;
 
@@ -58,14 +59,16 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('Dashboard.dashboard');
 });
+Route::resource('/Dashboard', DashboardPostController::class);
 
 // Route::get('/mypost', function () {
 //     return view('Dashboard.mypost');
 // });
 
-Route::get('/mypost', [SewaController::class, 'index'])->name('mypost');
-Route::get('/create-mypost', [SewaController::class, 'create'])->name('create-mypost');
-Route::post('/simpan-mypost', [SewaController::class, 'store'])->name('simpan-mypost');
+// Route::get('/mypost', [DashboardPostController::class, 'index'])->name('mypost');
+// Route::get('/create-mypost', [DashboardPostController::class, 'create'])->name('create-mypost');
+
+// Route::post('/simpan-mypost', [SewaController::class, 'store'])->name('simpan-mypost');
 Route::get('/edit-mypost/{id}', [SewaController::class, 'edit'])->name('edit-mypost');
 Route::post('/update-mypost/{id}', [SewaController::class, 'update'])->name('update-mypost');
 Route::get('/delete-mypost/{id}', [SewaController::class, 'destroy'])->name('delete-mypost');

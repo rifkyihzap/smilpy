@@ -65,13 +65,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="nav-item menu-open">
             <ul class="nav nav-treeview">
             <li class="nav-item">
-                <a href="/dashboard">
+                <a class="{{ Request::is('dashboard')? 'active' : '' }}" href="/dashboard">
                     <i class="bi bi-house-door"></i> 
                         Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('mypost') }}">
+                <a class="{{ Request::is('dashboard/mypost')? 'active' : '' }}" href="/Dashboard">
                     <i class="bi bi-file-post-fill"></i> 
                     My Posts
                 </a>

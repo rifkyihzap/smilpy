@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class DashboardPostController extends Controller
 {
@@ -14,7 +15,9 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        //
+        return view('Dashboard.mypost', [
+            'posts' => Post::all()
+        ]);
     }
 
     /**
@@ -24,7 +27,7 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        //
+        return view('Dashboard.create-mypost');
     }
 
     /**
@@ -46,7 +49,9 @@ class DashboardPostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('Dashboard.show', [
+            'post' => $post
+        ]);
     }
 
     /**
