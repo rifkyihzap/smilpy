@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/Dashboard">
+                <a href="{{ route('mypost') }}">
                     <i class="bi bi-file-post-fill"></i> 
                     My Posts
                 </a>
@@ -110,7 +110,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="card card-info card-outline">
             <div class="card-header">
                 <div class="card-tools">
-                    <a href="/Dashboard/create-mypost" class="btn btn-success">Upload Sekarang <i class="bi bi-plus-square"></i></a>
+                    <a href="{{ route('create-mypost') }}" class="btn btn-success">Upload Sekarang <i class="bi bi-plus-square"></i></a>
                 </div>
             </div>
 
@@ -150,7 +150,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td>{{ $post->deskripsi }}</td>
                             <td>{{ $post->keterangan }}</td>
                             <td>{{ $post->harga }}</td>
-                            <td><a href="/Dashboard/show{{ $post->slug }}"><i class="bi bi-eye"></i></a> 
+                            <td><a href="/dashboard/mypost/{{ $post->slug }}"><i class="bi bi-eye"></i></a> 
                                 <a href="{{ url('edit-mypost') }}"><i class="bi bi-pencil-square"></i></a> 
                                 <a href="{{ url('delete-mypost') }}"><i class="bi bi-trash" style="color: red"></i></a>
                             </td>

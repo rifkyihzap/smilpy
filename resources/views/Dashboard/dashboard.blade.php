@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
             </li>
             <li class="nav-item">
-                <a class="{{ Request::is('dashboard/mypost')? 'active' : '' }}" href="/Dashboard">
+                <a class="{{ Request::is('dashboard/mypost')? 'active' : '' }}" href="{{ route('mypost') }}">
                     <i class="bi bi-file-post-fill"></i> 
                     My Posts
                 </a>

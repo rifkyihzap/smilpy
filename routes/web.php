@@ -59,16 +59,16 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('Dashboard.dashboard');
 });
-Route::resource('/Dashboard', DashboardPostController::class);
+Route::resource('/mypost', DashboardPostController::class);
 
 // Route::get('/mypost', function () {
 //     return view('Dashboard.mypost');
 // });
 
-// Route::get('/mypost', [DashboardPostController::class, 'index'])->name('mypost');
-// Route::get('/create-mypost', [DashboardPostController::class, 'create'])->name('create-mypost');
+Route::get('/mypost', [DashboardPostController::class, 'index'])->name('mypost');
+Route::get('/create-mypost', [DashboardPostController::class, 'create'])->name('create-mypost');
 
-// Route::post('/simpan-mypost', [SewaController::class, 'store'])->name('simpan-mypost');
+Route::post('/simpan-mypost', [DashboardPostController::class, 'store'])->name('simpan-mypost');
 Route::get('/edit-mypost/{id}', [SewaController::class, 'edit'])->name('edit-mypost');
 Route::post('/update-mypost/{id}', [SewaController::class, 'update'])->name('update-mypost');
 Route::get('/delete-mypost/{id}', [SewaController::class, 'destroy'])->name('delete-mypost');

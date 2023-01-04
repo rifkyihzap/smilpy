@@ -23,7 +23,7 @@
     <div class="col">
     <div class="card h-100">
     <a href="/posts/{{ $post->slug }}" class="text-decoration-none" style="color: black">
-    <img src="{{ $post->foto }}" alt=" {{ $post->title }}" class="card-img-top">
+    <img src="img/{{ $post->foto }}" alt=" {{ $post->title }}" class="card-img-top">
     <div class="card-body">
     <h7 class="card-title fw-bold"> {{ $post->title }}</h7>
     <p class="card-text text-secondary">Memiliki {{ $post->jmlhfasilitas }} {{ $post->plhnfasilitas }} </p>

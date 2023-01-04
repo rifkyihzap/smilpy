@@ -79,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/Dashboard">
+                <a href="{{ route('mypost') }}">
                     <i class="bi bi-file-post-fill"></i> 
                     My Posts
                 </a>
@@ -122,11 +122,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
 
             <div class="card-body col-lg-8">
-                <form action="/Dashboard" method="post">
+                <form action="{{ route('simpan-mypost') }}" method="post">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for=""> Berikan nama pada tempat anda</label>
+                        <label for="judul"> Berikan nama pada tempat anda</label>
                         <input type="text" name="judul" id="judul" class="form-control" placeholder="Nama Tempat">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="slug">Slug</label>
+                        <input type="text" name="slug" id="slug" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Pilih Kota</label>
+                        <select class="form-select" name="category_id" id="category_id">
+                            @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->lokasi }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="user">Pilih user</label>
+                        <input type="text" name="user_id" id="user_id" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="excerpt">Excerpt</label>
+                        <input type="text" name="excerpt" id="excerpt" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="body">Body</label>
+                        <input type="text" name="body" id="body" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -146,14 +174,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                     
                     <div class="form-group">
-                        <label for=""> Di mana tempat Anda berada?</label>
-                        <ul class="list-group list-group-horizontal">
+                        <label for="alamat"> Di mana tempat Anda berada?</label>
+                        <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Negara,Kota,Jalan">
+                        {{-- <ul class="list-group list-group-horizontal">
                             <li class="list-group-item"><input type="text" name="alamat" id="alamat" class="form-control" placeholder="Negara"></li>
                             <li class="list-group-item"><input type="text" name="alamat" id="alamat" class="form-control" placeholder="Provinsi"></li>
                             <li class="list-group-item"><input type="text" name="alamat" id="alamat" class="form-control" placeholder="Kota"></li>
                             <li class="list-group-item"><input type="text" name="alamat" id="alamat" class="form-control" placeholder="Jalan"></li>
                         </ul>
-                        
+                         --}}
                         {{-- <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat"> --}}
                     </div>
 
