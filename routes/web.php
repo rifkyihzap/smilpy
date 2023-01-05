@@ -36,22 +36,25 @@ Route::get('categories/{category:slug}', function (Category $category) {
 });
 
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/dashboard', function () {
-    return view('Dashboard.dashboard');
-});
+// Route::get('/dashboard', function () {
+//     return view('Dashboard.dashboard');
+// });
+Route::get('/dashboard', [DashboardPostController::class, 'index'])->middleware('auth');
+
 Route::resource('/mypost', DashboardPostController::class);
 
 // Route::get('/mypost', function () {
 //     return view('Dashboard.mypost');
 // });
 
-Route::get('/mypost', [DashboardPostController::class, 'index'])->name('mypost');
+Route::get('/mypost', [DashboardPostController::class, 'index'])->name('mypost')->middleware('auth');
 Route::get('/create-mypost', [DashboardPostController::class, 'create'])->name('create-mypost');
 
 Route::post('/simpan-mypost', [DashboardPostController::class, 'store'])->name('simpan-mypost');

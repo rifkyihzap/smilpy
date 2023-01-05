@@ -26,17 +26,32 @@
                 <img src="/img/smilpy.png" alt="LOGO" width="140" height="70" class="d-inline-block align-text-top img-fluid">
             </a>
             <ul class="navbar-nav">
+
+                @auth
                 <span class="border border-3 rounded-pill">
                     <li class="nav-item">
                         <a class="nav-link active fs-6" aria-current="page"  href="/dashboard">Menjadi tuan rumah di Smilpy</a>
                     </li>
                 </span>
                 <li class="nav-item">
-                    <a class="nav-link active fs-6" href="/dashboard"><i class="bi bi-menu-button-wide-fill me-2"></i>Pesanan Saya</a>
+                    <a class="nav-link active fs-6" href="/dashboard"><i class="bi bi-menu-button-wide-fill me-1"></i>Pesanan Saya</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active fs-6" href="/login"><i class="bi bi-person-circle me-2"></i>Log In</a>
+                    <a class="nav-link active fs-6" href="/dashboard"><i class="bi bi-person-circle me-1"></i>{{ auth()->user()->name }}</a>
                 </li>
+                <form action="/logout" method="post">
+                    @csrf
+                    <li class="nav-item">
+                        <button type="submit" class="btn btn-link text-dark">
+                            <i class="bi bi-box-arrow-left me-1"></i>Log out
+                        </button>
+                    </li>
+                </form>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link active fs-6" href="/login"><i class="bi bi-box-arrow-right me-1"></i>Log In</a>
+                </li>
+                @endauth
             </ul>
         </div>
     </nav>
