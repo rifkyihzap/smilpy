@@ -15,19 +15,12 @@
             <a href="#" class="text-decoration-underline"><i class="bi bi-heart me-1"></i> simpan</a>
         </div>
     </div>
-    <img src="img/{{ $post->image }}" class="rounded mx-auto d-block img-fluid mt-4" style="width: 1300px; height: 450px;" alt="...">
+    <img src="/img/{{ $post->foto }}" class="rounded mx-auto d-block img-fluid mt-4" style="width: 1300px; height: 450px;" alt="{{ $post->title }}">
     <div class="row justify-content-start">
         <div class="col-7">
             <h3 class="mt-4">{{ $post->title }}</h3>
-            <div class="row justify-content-between">
-                <div class="col-auto me-auto">
-                    <p class="text-muted mt-4">{{ $post->jmlhfasilitas }} {{ $post->plhnfasilitas }} </p>
-                </div>
-                <div class="col-auto">
-                    <a href="#">{{ $post->user->name }}</a>
-                    {{-- <a> <img src="img/{{ $post->category->profil }}" alt="" width="40" height="40" class="rounded-circle"> </a> --}}
-                </div>
-            
+            <p class="text-muted mt-4">{{ $post->jmlhfasilitas }} {{ $post->plhnfasilitas }} </p>
+            <a href="#">{{ $post->user->name }}</a>
             <hr>
             <p>{{ $post->body}}</p>
             <p class="fst-italic">{{ $post->keterangan }}</p>

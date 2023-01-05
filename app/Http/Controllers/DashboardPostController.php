@@ -72,7 +72,7 @@ class DashboardPostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('Dashboard.show', [
+        return view('post', [
             'post' => $post
         ]);
     }

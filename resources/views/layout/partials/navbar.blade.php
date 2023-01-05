@@ -16,29 +16,6 @@
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    #overlay {
-        position: fixed;
-        display: none;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 2;
-        cursor: pointer;
-    }
-
-    #text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        font-size: 50px;
-        color: white;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-    }
 </style>
 
 <body>
@@ -46,30 +23,20 @@
         <div class="container-fluid">
 
             <a class="navbar-brand" href="/">
-                <img src="img/smilpy.png" alt="LOGO" width="140" height="70" class="d-inline-block align-text-top img-fluid">
+                <img src="/img/smilpy.png" alt="LOGO" width="140" height="70" class="d-inline-block align-text-top img-fluid">
             </a>
             <ul class="navbar-nav">
                 <span class="border border-3 rounded-pill">
-                <li class="nav-item">
-                    <a class="nav-link active fs-6" aria-current="page"  href="/dashboard">Menjadi tuan rumah di Smilpy</a>
-                </li>
-            </span>
+                    <li class="nav-item">
+                        <a class="nav-link active fs-6" aria-current="page"  href="/dashboard">Menjadi tuan rumah di Smilpy</a>
+                    </li>
+                </span>
                 <li class="nav-item">
                     <a class="nav-link active fs-6" href="/dashboard"><i class="bi bi-menu-button-wide-fill me-2"></i>Pesanan Saya</a>
                 </li>
-
-
                 <li class="nav-item">
-                    <a class="nav-link active fs-6" href="/register"><i class="bi bi-person-circle me-2"></i>Log In</a>
+                    <a class="nav-link active fs-6" href="/login"><i class="bi bi-person-circle me-2"></i>Log In</a>
                 </li>
-
-
-                <div id="overlay" onclick="off()">
-                    <div id="text">Belum Jadi Tabel Daftar</div>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-primary" onclick="on()">Daftar</button>
-                </div>
             </ul>
         </div>
     </nav>
@@ -78,15 +45,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script>
-        function on() {
-            document.getElementById("overlay").style.display = "block";
-        }
-
-        function off() {
-            document.getElementById("overlay").style.display = "none";
-        }
-    </script>
 </body>
 
 </html>

@@ -1,12 +1,14 @@
 <?php
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SewaController;
-use App\Http\Controllers\DashboardPostController;
 
-use App\Models\Category;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +22,8 @@ use App\Models\Category;
 */
 
 Route::get('/', [PostController::class, 'index']);
-Route::get('posts/{post:slug}', [PostController::class, 'show']);
+
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
 
 
@@ -33,28 +36,10 @@ Route::get('categories/{category:slug}', function (Category $category) {
 });
 
 
+Route::get('/login', [LoginController::class, 'index']);
 
-
-Route::get('/abiansemal', function () {
-    return view('abiansemal', [
-        "title" => "abiansemal",
-        "nama" => "Villa Jimbaran",
-        "ulasan" => "2 ulasan",
-        "lokasi" => "Abiansemal,Indonesia",
-        "bagikan" => "Bagikan",
-        "simpan" => "Simpan",
-        "image" => "aa.jpg",
-        "tempat" => "Cilffside villa near Pandawa Beach"
-    ]);
-});
-
-Route::get('/register', function () {
-    return view('register');
-});
-
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('Dashboard.dashboard');
