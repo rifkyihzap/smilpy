@@ -49,7 +49,7 @@
                 </form>
                 @else
                 <li class="nav-item">
-                    <a class="nav-link active fs-6" href="/login"><i class="bi bi-box-arrow-right me-1"></i>Log In</a>
+                    <a class="nav-link active fs-6" href="/login"><i class="bi bi-box-arrow-in-right me-1"></i>Log In</a>
                 </li>
                 @endauth
             </ul>

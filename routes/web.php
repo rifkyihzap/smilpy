@@ -4,7 +4,6 @@ use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\SewaController;
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -43,21 +42,43 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-// Route::get('/dashboard', function () {
-//     return view('Dashboard.dashboard');
-// });
-Route::get('/dashboard', [DashboardPostController::class, 'index'])->middleware('auth');
+Route::get('/dashboard', function () {
+    return view('Dashboard.dashboard');
+})->middleware('auth');
 
-Route::resource('/mypost', DashboardPostController::class);
+Route::get('/mypost', function () {
+    return view('Dashboard.posts.mypost');
+})->middleware('auth');
+// Route::resource('/Dashboard/posts', DashboardPostController::class)->middleware('auth');
 
-// Route::get('/mypost', function () {
-//     return view('Dashboard.mypost');
-// });
-
-Route::get('/mypost', [DashboardPostController::class, 'index'])->name('mypost')->middleware('auth');
-Route::get('/create-mypost', [DashboardPostController::class, 'create'])->name('create-mypost');
-
-Route::post('/simpan-mypost', [DashboardPostController::class, 'store'])->name('simpan-mypost');
-Route::get('/edit-mypost/{id}', [SewaController::class, 'edit'])->name('edit-mypost');
-Route::post('/update-mypost/{id}', [SewaController::class, 'update'])->name('update-mypost');
-Route::get('/delete-mypost/{id}', [SewaController::class, 'destroy'])->name('delete-mypost');
+Route::get('/create-mypost', [DashboardPostController::class, 'create'])->middleware('auth');
+Route::get('/create-mypost1', function () {
+    return view('Dashboard.posts.create-mypost1');
+})->middleware('auth');
+Route::get('/create-mypost2', function () {
+    return view('Dashboard.posts.create-mypost2');
+})->middleware('auth');
+Route::get('/create-mypost3', function () {
+    return view('Dashboard.posts.create-mypost3');
+})->middleware('auth');
+Route::get('/create-mypost4', function () {
+    return view('Dashboard.posts.create-mypost4');
+})->middleware('auth');
+Route::get('/create-mypost5', function () {
+    return view('Dashboard.posts.create-mypost5');
+})->middleware('auth');
+Route::get('/create-mypost6', function () {
+    return view('Dashboard.posts.create-mypost6');
+})->middleware('auth');
+Route::get('/create-mypost7', function () {
+    return view('Dashboard.posts.create-mypost7');
+})->middleware('auth');
+Route::get('/create-mypost8', function () {
+    return view('Dashboard.posts.create-mypost8');
+})->middleware('auth');
+Route::get('/create-mypost9', function () {
+    return view('Dashboard.posts.create-mypost9');
+})->middleware('auth');
+Route::get('/create-mypost10', function () {
+    return view('Dashboard.posts.create-mypost10');
+})->middleware('auth');

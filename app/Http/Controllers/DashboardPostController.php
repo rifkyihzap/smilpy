@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Models\Category;
 use Illuminate\Http\Request;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class DashboardPostController extends Controller
 {
@@ -16,9 +14,8 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        $post = Post::all();
-        return view('Dashboard.mypost', [
-            'posts' => Post::all()
+        return view('Dashboard.posts.mypost', [
+            'posts' => Post::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
@@ -29,9 +26,7 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        return view('Dashboard.create-mypost', [
-            'categories' => Category::all()
-        ]);
+        return view('Dashboard.posts.create-mypost');
     }
 
     /**
@@ -42,26 +37,7 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        Post::create([
-            'judul' => $request->judul,
-            'title' => $request->title,
-            'slug' => $request->slug,
-            'category_id' => $request->category_id,
-            'user_id' => $request->user_id,
-            'excerpt' => $request->excerpt,
-            'body' => $request->body,
-            'jenistmpt' => $request->jenistmpt,
-            'alamat' => $request->alamat,
-            'plhnfasilitas' => $request->plhnfasilitas,
-            'jmlhfasilitas' => $request->jmlhfasilitas,
-            'fasilitaslain' => $request->fasilitaslain,
-            'foto' => $request->foto,
-            'deskripsi' => $request->deskripsi,
-            'keterangan' => $request->keterangan,
-            'harga' => $request->harga
-        ]);
-
-        return redirect('/dashboard');
+        //
     }
 
     /**
@@ -72,9 +48,7 @@ class DashboardPostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('post', [
-            'post' => $post
-        ]);
+        //
     }
 
     /**

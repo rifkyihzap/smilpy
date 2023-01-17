@@ -17,26 +17,19 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id');
             $table->foreignId('user_id');
-            $table->string('title');
+            $table->foreignId('categoryfasilitasutama_id');
+            $table->foreignId('categoryfasilitasumum_id');
+            $table->string('judul')->unique();
             $table->string('slug')->unique();
-            $table->text('excerpt');
-            $table->text('body');
+            $table->string('kategoritempat');
+            $table->string('tipetempat');
+            $table->string('alamat');
+            $table->string('image')->nullable();
+            $table->text('deskripsi');
+            $table->string('tipetempattidur');
+            $table->string('harga');
 
             $table->timestamp('published_at')->nullable();
-
-
-            $table->string('judul', 100);
-
-
-            $table->string('jenistmpt', 100);
-            $table->string('alamat', 100);
-            $table->string('jmlhfasilitas', 100);
-            $table->string('plhnfasilitas', 100);
-            $table->string('fasilitaslain', 100);
-            $table->string('foto', 100);
-            $table->string('deskripsi', 100);
-            $table->string('keterangan', 100);
-            $table->string('harga', 100);
             $table->timestamps();
         });
     }
