@@ -21,6 +21,11 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function futama()
+    {
+        return $this->hasMany(CategoryFasilitasUtama::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

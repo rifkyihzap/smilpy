@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('category_fasilitas_umums', function (Blueprint $table) {
             $table->id();
             $table->string('fasilitasumum');
+            $table->string('imglogo');
             $table->timestamps();
         });
     }
