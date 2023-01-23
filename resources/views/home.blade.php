@@ -23,7 +23,7 @@
                     <img src="/img/{{ $post->image }}" alt=" {{ $post->judul }}" class="card-img-top">
                     <div class="card-body">
                         <h7 class="card-title fw-bold"> {{ $post->judul }}</h7>
-                        <p class="card-text text-secondary">Memiliki {{ $post->categoryfasilitasutama_id }} {{ $post->categoryfasilitasumum_id }} </p>
+                        <p class="card-text text-secondary">Memiliki {{ $post->futama->value }} {{ $post->futama->futama }} {{ $post->category_fasilitas_umum->fasilitasumum }} </p>
                         <dt class="card-text fw-bold">{{ $post->harga }} <small class="text-muted">Malam</small></dt>
                     </div>
                 </a>

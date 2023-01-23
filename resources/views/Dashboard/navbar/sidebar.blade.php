@@ -24,13 +24,13 @@
         <li class="nav-item menu-open">
             <ul class="nav nav-treeview">
             <li class="nav-item">
-                <a class="{{ Request::is('dashboard')? 'active' : '' }}" href="/dashboard">
+                <a href="/dashboard">
                     <i class="bi bi-house-door"></i> 
                         Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a class="{{ Request::is('dashboard/mypost')? 'active' : '' }}" href="/mypost">
+                <a href="/mypost">
                     <i class="bi bi-file-post-fill"></i> 
                     My Posts
                 </a>

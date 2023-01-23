@@ -39,27 +39,12 @@
                     di tempat Anda</h2>
                     <p>Anda akan menambahkan detail lainnya nanti, seperti tipe tempat tidur.</p>
 
-                    <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
-                    <label class="btn btn-outline-dark" for="btn-check-outlined"><img src="img/icon/material-symbols_wifi-rounded.png">
-                        <br>WiFi</label>
-                    <input type="checkbox" class="btn-check" id="btn-2-check-outlined" autocomplete="off">
-                    <label class="btn btn-outline-dark" for="btn-2-check-outlined"><img src="img/icon/mdi_kitchen-counter-outline.png">
-                        <br>Dapur</label>
-                    <input type="checkbox" class="btn-check" id="btn-3-check-outlined" autocomplete="off">
-                    <label class="btn btn-outline-dark" for="btn-3-check-outlined"><img src="img/icon/material-symbols_ac-unit.png">
-                        <br>AC</label>
-                    <input type="checkbox" class="btn-check" id="btn-4-check-outlined" autocomplete="off">
-                    <label class="btn btn-outline-dark" for="btn-4-check-outlined"><img src="img/icon/ic_outline-live-tv.png">
-                        <br>Televisi</label>
-                    <input type="checkbox" class="btn-check" id="btn-5-check-outlined" autocomplete="off">
-                    <label class="btn btn-outline-dark" for="btn-5-check-outlined"><img src="img/icon/fluent-mdl2_parking-solid.png">
-                        <br>Parkir</label>
-                    <input type="checkbox" class="btn-check" id="btn-6-check-outlined" autocomplete="off">
-                    <label class="btn btn-outline-dark" for="btn-6-check-outlined"><img src="img/icon/cil_pool.png">
-                        <br>Kolam Renang</label>
-                    <input type="checkbox" class="btn-check" id="btn-7-check-outlined" autocomplete="off">
-                    <label class="btn btn-outline-dark" for="btn-7-check-outlined"><img src="img/icon/cil_bath.png">
-                        <br>Bathup</label>
+                    @foreach ($category_fasilitas_umums as $fasilitasumum)
+                    <label class="btn btn-outline-dark">
+                        <input type="checkbox" class="btn-check" id="category_fasilitas_umum_id" name="category_fasilitas_umum_id" autocomplete="off">
+                        <img src="img/icon/{{ $fasilitasumum ->imglogo }}">
+                        <br>{{ $fasilitasumum ->fasilitasumum }}</label>
+                    @endforeach
 
             </div>
             <nav aria-label="Page navigation example">

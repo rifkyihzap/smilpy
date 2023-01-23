@@ -28,7 +28,7 @@
         </div>
 
         <div class="card-body">
-            <table class="table table-boardered">
+            <table class="table table-boardered table-responsive col-lg-12">
                 <tr>
                     <th>Judul</th>
                     <th>Tempat</th>
@@ -42,47 +42,24 @@
                     <th>Deskripsi</th>
                     <th>Aksi</th>
                 </tr>
-                {{-- @foreach ($posts as $post)
-                    <tr>
+            @foreach ($posts as $post)
+                    <tr> 
                         <td>{{ $post->judul }}</td>
-                        <td>{{ $post->title }}</td>
-                        <td>{{ $post->slug }}</td>
-                        <td>{{ $post->excerpt }}</td>
-                        <td>{{ $post->body }}</td>
-                        <td>{{ $post->jenistmpt }}</td>
+                        <td>{{ $post->kategoritempat }}</td>
+                        <td>{{ $post->tipetempat }}</td>
                         <td>{{ $post->alamat }}</td>
-                        <td>{{ $post->jmlhfasilitas }}</td>
-                        <td>{{ $post->plhnfasilitas }}</td>
-                        <td>{{ $post->fasilitaslain }}</td>
-                        <td>{{ $post->foto }}</td>
-                        <td>{{ $post->deskripsi }}</td>
-                        <td>{{ $post->keterangan }}</td>
+                        <td>{{ $post->category->lokasi }}</td>
+                        <td>{{ $post->futama->futama }} {{ $post->futama->value }}</td>
+                        <td>{{ $post->category_fasilitas_umum->fasilitasumum }}</td>
+                        <td>{{ $post->image }}</td>
                         <td>{{ $post->harga }}</td>
-                        <td><a href="/dashboard/mypost/{{ $post->slug }}"><i class="bi bi-eye"></i></a> 
-                            <a href="{{ url('edit-mypost') }}"><i class="bi bi-pencil-square"></i></a> 
-                            <a href="{{ url('delete-mypost') }}"><i class="bi bi-trash" style="color: red"></i></a>
+                        <td>{{ $post->deskripsi }}</td>
+                        <td><a href="/posts/{{ $post->slug }}"><i class="bi bi-eye"></i></a> <br>
+                            <a href="#"><i class="bi bi-pencil-square"></i></a> <br>
+                            <a href="#"><i class="bi bi-trash" style="color: red"></i></a>
                         </td>
                     </tr>
-                @endforeach --}}
-                
-                {{-- @foreach ($dtsewa as $item)
-                <tr>
-                    {{-- <td>{{ $item->judul }}</td>
-                    <td>{{ $item->jenistmpt }}</td>
-                    <td>{{ $item->alamat }}</td>
-                    <td>{{ $item->jmlhfasilitas }}</td>
-                    <td>{{ $item->plhnfasilitas }}</td>
-                    <td>{{ $item->fasilitaslain }}</td>
-                    <td>{{ $item->foto }}</td>
-                    <td>{{ $item->deskripsi }}</td>
-                    <td>{{ $item->keterangan }}</td>
-                    <td>{{ $item->harga }}</td> --}}
-                    {{-- <td>
-                        <a href="{{ url('edit-mypost',$item->id) }}"><i class="bi bi-pencil-square"></i></a> 
-                        <a href="{{ url('delete-mypost',$item->id) }}"><i class="bi bi-trash" style="color: red"></i></a>
-                    </td>
-                </tr>
-                @endforeach --}}
+                @endforeach
             </table>
         </div>
     </div>

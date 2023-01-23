@@ -23,7 +23,12 @@ class Post extends Model
 
     public function futama()
     {
-        return $this->hasMany(CategoryFasilitasUtama::class);
+        return $this->belongsTo(Futama::class);
+    }
+
+    public function category_fasilitas_umum()
+    {
+        return $this->belongsTo(CategoryFasilitasUmum::class);
     }
 
     public function getRouteKeyName()

@@ -40,30 +40,14 @@
                     mengenai tempat Anda</h2>
                     <p>Sampaikan informasi dasar
                         mengenai tempat Anda</p>
+                        @foreach ($futamas as $futama)
                         <div class="row border-bottom">
-                            <div class="col-md-8"><h4>Tamu</h4></div>
+                            <div class="col-md-8"><h4>{{ $futama->futama }}</h4></div>
                             <div class="col-6 col-md-3">
-                                <input type="text" class="form-control" placeholder="Jumlah" aria-label="Jumlah">
+                                <input type="text" class="form-control" placeholder="Jumlah" aria-label="Jumlah" id="value" name="value">
                             </div>
                         </div>
-                        <div class="row border-bottom">
-                            <div class="col-md-8"><h4>Kamar</h4></div>
-                            <div class="col-6 col-md-3">
-                                <input type="text" class="form-control" placeholder="Jumlah" aria-label="Jumlah">
-                            </div>
-                        </div>
-                        <div class="row border-bottom">
-                            <div class="col-md-8"><h4>Tempat Tidur</h4></div>
-                            <div class="col-6 col-md-3">
-                                <input type="text" class="form-control" placeholder="Jumlah" aria-label="Jumlah">
-                            </div>
-                        </div>
-                        <div class="row border-bottom">
-                            <div class="col-md-8"><h4>Kamar Mandi</h4></div>
-                            <div class="col-6 col-md-3">
-                                <input type="text" class="form-control" placeholder="Jumlah" aria-label="Jumlah">
-                            </div>
-                        </div>
+                        @endforeach
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">

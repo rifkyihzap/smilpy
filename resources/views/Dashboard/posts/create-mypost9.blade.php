@@ -40,7 +40,7 @@
                     
                     <div class="col-md-6"><h4>Harga</h4></div>
                             <div class="col-6 col-md-4">
-                                <input type="text" class="form-control" placeholder="Harga" aria-label="Harga">
+                                <input type="text" class="form-control" placeholder="Harga" aria-label="Harga" id="harga" name="harga">
                             </div>
             </div>
             <nav aria-label="Page navigation example">

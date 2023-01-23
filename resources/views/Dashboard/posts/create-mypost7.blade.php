@@ -38,10 +38,17 @@
                 <h2>Tuliskan deskripsi tempat Anda</h2>
                     <p>Judul ringkas adalah yang terbaik.
                         Jangan khawatir, Anda bisa mengubahnya kapan saja.</p>
-                        <div class="form-floating">
-                            <input class="form-control" type="text" placeholder="Masukkan judul untuk tempat Anda" aria-label="Judul">
-                            <textarea class="form-control" placeholder="Deskripsi" id="floatingTextarea2" style="height: 100px"></textarea>
-                        </div>
+                        <form>
+                            <div class="mb-3">
+                            <label for="judul" class="form-label">Judul</label>
+                            <input type="text" class="form-control" id="judul" name="judul">
+                            </div>
+                            <div class="mb-3">
+                            <label for="deskripsi" class="form-label">Deskripsi</label>
+                            <textarea class="form-control" placeholder="Deskripsi" id="deskripsi" name="deskripsi" style="height: 100px">
+                            </textarea>
+                            </div>
+                        </form>
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">

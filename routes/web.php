@@ -8,6 +8,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
+use App\Models\CategoryFasilitasUmum;
+use App\Models\Futama;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,26 +48,34 @@ Route::get('/dashboard', function () {
     return view('Dashboard.dashboard');
 })->middleware('auth');
 
-Route::get('/mypost', function () {
-    return view('Dashboard.posts.mypost');
-})->middleware('auth');
 // Route::resource('/Dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::get('/mypost', [DashboardPostController::class, 'index'])->middleware('auth');
 
 Route::get('/create-mypost', [DashboardPostController::class, 'create'])->middleware('auth');
-Route::get('/create-mypost1', function () {
-    return view('Dashboard.posts.create-mypost1');
-})->middleware('auth');
+Route::get('/create-mypost1', [DashboardPostController::class, 'create1'])->middleware('auth');
+// Route::get('/create-mypost1', function () {
+//     return view('Dashboard.posts.create-mypost1');
+// })->middleware('auth');
 Route::get('/create-mypost2', function () {
     return view('Dashboard.posts.create-mypost2');
 })->middleware('auth');
+
 Route::get('/create-mypost3', function () {
-    return view('Dashboard.posts.create-mypost3');
+    return view('Dashboard.posts.create-mypost3', [
+        "title" => "",
+        "categories" => Category::all(),
+        "posts" => Post::all()
+    ]);
 })->middleware('auth');
 Route::get('/create-mypost4', function () {
-    return view('Dashboard.posts.create-mypost4');
+    return view('Dashboard.posts.create-mypost4', [
+        'futamas' => Futama::all()
+    ]);
 })->middleware('auth');
 Route::get('/create-mypost5', function () {
-    return view('Dashboard.posts.create-mypost5');
+    return view('Dashboard.posts.create-mypost5', [
+        'category_fasilitas_umums' => CategoryFasilitasUmum::all()
+    ]);
 })->middleware('auth');
 Route::get('/create-mypost6', function () {
     return view('Dashboard.posts.create-mypost6');
@@ -80,5 +90,9 @@ Route::get('/create-mypost9', function () {
     return view('Dashboard.posts.create-mypost9');
 })->middleware('auth');
 Route::get('/create-mypost10', function () {
-    return view('Dashboard.posts.create-mypost10');
+    return view('Dashboard.posts.create-mypost10', [
+        "title" => "",
+        "categories" => Category::all(),
+        "posts" => Post::all()
+    ]);
 })->middleware('auth');

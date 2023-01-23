@@ -15,19 +15,19 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
-            $table->foreignId('user_id');
-            $table->foreignId('categoryfasilitasutama_id');
-            $table->foreignId('categoryfasilitasumum_id');
-            $table->string('judul')->unique();
-            $table->string('slug')->unique();
-            $table->string('kategoritempat');
-            $table->string('tipetempat');
-            $table->string('alamat');
+            $table->foreignId('category_id')->nullable();
+            $table->foreignId('user_id')->nullable();
+            $table->foreignId('futama_id')->nullable();
+            $table->foreignId('category_fasilitas_umum_id')->nullable();
+            $table->string('judul')->unique()->nullable();
+            $table->string('slug')->unique()->nullable();
+            $table->string('kategoritempat')->nullable();
+            $table->string('tipetempat')->nullable();
+            $table->string('alamat')->nullable();
             $table->string('image')->nullable();
-            $table->text('deskripsi');
-            $table->string('tipetempattidur');
-            $table->string('harga');
+            $table->text('deskripsi')->nullable();
+            $table->string('tipetempattidur')->nullable();
+            $table->string('harga')->nullable();
 
             $table->timestamp('published_at')->nullable();
             $table->timestamps();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class DashboardPostController extends Controller
@@ -15,7 +16,9 @@ class DashboardPostController extends Controller
     public function index()
     {
         return view('Dashboard.posts.mypost', [
-            'posts' => Post::where('user_id', auth()->user()->id)->get()
+            'posts' => Post::where('user_id', auth()->user()->id)->get(), //untuk menampilkan yang ada di user yg login saja
+            "title" => "Home",
+            "categories" => Category::all()
         ]);
     }
 
@@ -27,6 +30,18 @@ class DashboardPostController extends Controller
     public function create()
     {
         return view('Dashboard.posts.create-mypost');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+
+    public function create1()
+    {
+        return view('Dashboard.posts.create-mypost1');
     }
 
     /**

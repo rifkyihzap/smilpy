@@ -38,8 +38,17 @@
             <div class="card-body ">
                 <h2>Di mana lokasi tempat Anda?</h2>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control rounded-pill" placeholder="Masukkan alamat Anda" aria-label="Masukkan alamat Anda" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary rounded-pill" type="button" id="button-addon2"><i class="bi bi-geo-alt-fill"></i></i></button>
+                    <input type="text" class="form-control rounded-pill" id="alamat" name="alamat"
+                    placeholder="Masukkan alamat Anda" aria-label="Masukkan alamat Anda" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary rounded-pill" type="button" id="alamat"><i class="bi bi-geo-alt-fill"></i></button>
+                </div>
+                <div>
+                    <select class="form-select rounded-pill" aria-label="Default select example" id="category_id" name="category_id">
+                        <option selected>Pilih kota tempat anda</option>
+                        @foreach ($categories as $category)
+                        <option value="1">{{ $category->lokasi }}</option>
+                        @endforeach
+                    </select>
                 </div>
 
             

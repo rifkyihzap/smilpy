@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('category_fasilitas_utamas', function (Blueprint $table) {
+        Schema::create('futamas', function (Blueprint $table) {
             $table->id();
-            $table->string('fasilitasutama');
+            $table->string('futama');
             $table->string('value')->nullable();
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_fasilitas_utamas');
+        Schema::dropIfExists('futamas');
     }
 };

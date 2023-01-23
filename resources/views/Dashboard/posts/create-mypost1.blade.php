@@ -38,17 +38,31 @@
             <div class="card-body ">
                 <h2>Kategori mana yang paling
                     menggambarkan tempat Anda?</h2>
-                    <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                    <label class="btn btn-outline-secondary" for="option1"><img src="img/ic_outline-home .png"><br>Rumah</label>
 
-                    <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="option2"><img src="img/apart.png"><br>Apartemen</label>
+                <form method="post" action="/create-mypost1">
+                    @csrf
+                    <div class="mb-3">
+                        <label class="btn btn-outline-secondary">
+                        <input type="radio" class="btn-check" name="kategoritempat" id="kategoritempat" autocomplete="off" value="Rumah">
+                        <img src="img/ic_outline-home .png">
+                        <br>Rumah</label>
 
-                    <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" checked>
-                    <label class="btn btn-outline-secondary" for="option3"><img src="img/hotel.png"><br>Hotel</label>
+                        <label class="btn btn-outline-secondary">
+                        <input type="radio" class="btn-check" name="kategoritempat" id="kategoritempat" autocomplete="off" value="Apartemen">
+                        <img src="img/apart.png">
+                        <br>Apartemen</label>
 
-                    <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="option4"><img src="img/guest.png"><br>Guest House</label>
+                        <label class="btn btn-outline-secondary">
+                        <input type="radio" class="btn-check" name="kategoritempat" id="kategoritempat" autocomplete="off" value="Hotel">
+                        <img src="img/hotel.png">
+                        <br>Hotel</label>
+
+                        <label class="btn btn-outline-secondary">
+                        <input type="radio" class="btn-check" name="kategoritempat" id="kategoritempat" autocomplete="off" value="Guest House">
+                        <img src="img/guest.png">
+                        <br>Guest House</label>
+                    </div>
+                </form>
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
